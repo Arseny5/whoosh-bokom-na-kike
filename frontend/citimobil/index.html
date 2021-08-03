@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru-RU" class="respect-color-scheme-preference">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Whoosh Hack &#8211;</title>
+
+	<link rel='stylesheet' id='twenty-twenty-one-style-css' href='css/ihatecopyright.css' />
+	<link rel='stylesheet' id='tt1-dark-mode-css' href='css/darkmode.css' media='all' />
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/description.css">
+
+	<style id="custom-background-css">
+		body.custom-background {
+			background-color: rgba(240, 240, 240, 0.15);
+		}
+	</style>
+
+	<link rel="icon" href="icons/icon.svg" sizes="192x192" />
+
+</head>
+
+<body>
+	<div id="progressbar"></div>
+    <div id="scrollPath"></div>
+	<div id="page" class="site">
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area">
+				<!--			<main id="main" class="site-main" role="main">-->
+				<div class="entry-content">
+
+					<div class="opisanie">
+						<h3 class="opisanie_h3">Проект поиска лучшего пути по разным метрикам для электросамокатов и
+							анализа его ETA</h3>
+						<p>                  </p>
+						<p class="about_team"><br>На данном сайте представлен прототип решения для Хакатона в котором
+							команда "Боком на КИКе" заняла 1 место. Мы (команда "Боком на КИКе") решили
+							проблему построения безопасных и эстетически насыщенных маршрутов для электросамокатов.
+							Решение заключается в выявление разных типов маршрутов(Безопасный, Красивый, Быстрый,
+							Исторический) и нахождение соотвествующих данных, что могут служить метриками для них.
+							Например, для безопасного маршрута использовалась карта высот с предпосылкой, что большой
+							перепад высот может негативно сказаться на безопасности пути. <br> Состав команды: студенты
+							ИТКН НИТУ «МИСиС» Владислав Тишин, Петер Ибрагимов, Арсений Иванов, Георгий Бондарь и
+							выпускник университета Вадим Порватов.</p>
+						<p>                  </p>
+						<h4 class="about_team">Ниже вы можете протестировать сам алгоритм. Выберете 2 точки на карте и
+							по ним построиться 7 маршрутов, слева от карты находится легенда.</h4>
+					</div>
+					<hr>
+					<div class="segments">
+
+						<div class="LEGEND_VERST">
+							<div class="history_fast">
+								<p class="text_legend">исторический<br>быстрый</p>
+							</div>
+							<div class="beautiful_fast">
+								<p class="text_legend">красивый<br>быстрый</p>
+							</div>
+							<div class="history">
+								<p class="text_legend one_word">исторический</p>
+							</div>
+							<div class="fast">
+								<p class="text_legend one_word">быстрый</p>
+							</div>
+							<div class="safe">
+								<p class="text_legend one_word">безопасный</p>
+							</div>
+							<div class="beautiful">
+								<p class="text_legend one_word">красивый</p>
+							</div>
+							<div class="safe_fast">
+								<p class="text_legend">безопасного<br>быстрый</p>
+							</div>
+
+							<!-- <img class="legend" src="resources/legend.png" alt=""> -->
+						</div>
+						<div class="objects">
+							<div id="map"></div>
+							<div class="button_style">
+								<input id="1" type="button" onclick="input1()" value="безопасный"
+									class="floating-button color_1"><br />
+								<input id="2" type="button" onclick="input2()" value="быстрый"
+									class="floating-button color_2"><br />
+								<input id="3" type="button" onclick="input3()" value="красивый"
+									class="floating-button color_3"><br />
+								<input id="4" type="button" onclick="input4()" value="исторический"
+									class="floating-button color_4"><br />
+								<input id="5" type="button" onclick="input5()" value="все маршруты"
+									class="floating-button color_5">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<button id="dark-mode-toggler" class="fixed-bottom" aria-pressed="false" onClick="toggleDarkMode()">
+					Dark Mode:
+					<span aria-hidden="true"></span>
+				</button>
+
+				<script src="js/darkmode.js"></script>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<!-- Footer -->
+	<section id="footer">
+		<div class="footer container">
+			<div class="brand">
+				<h1><span>Б</span>оком на <span>КИК</span>е</h1>
+			</div>
+			<h2></h2>
+			<img class="misis" src="https://www.4dk.ru/files/88723/misis-logo.png" alt="">
+			<p class="mail">bokomnakike@gmail.com</p>
+			<div class="social-icon">
+				<div class="social-item">
+					<a href="https://www.facebook.com/ars.iv.524/"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+				</div>
+				<div class="social-item">
+					<a href="https://www.instagram.com/_.kurtka_bein._/?hl=ru"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+				</div>
+				<div class="social-item">
+					<a href="#"><img src="https://img.icons8.com/bubbles/100/000000/twitter.png" /></a>
+				</div>
+			</div>
+			<p>Copyright © 2021 Bokom na KIKe. All rights reserved</p>
+		</div>
+	</section>
+	<!-- End Footer -->
+	<script type="text/javascript">
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function(){
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + "%";
+        }
+    </script>
+</body>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=8c38b83d-4105-430e-814c-3a3ccc7f08ee"
+	type="text/javascript"></script>
+<script src="js/index.js"></script>
+
+</html>

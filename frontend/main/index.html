@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru-RU" class="respect-color-scheme-preference">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Whoosh Hack &#8211;</title>
+
+	<link rel='stylesheet' id='twenty-twenty-one-style-css'  href='css/ihatecopyright.css'/>
+	<link rel='stylesheet' id='tt1-dark-mode-css'  href='css/darkmode.css' media='all' />
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/description.css">
+
+	<style id="custom-background-css">	body.custom-background { background-color: #ffd64e; } </style>
+
+	<link rel="icon" href="icons/icon.png" sizes="192x192" />
+
+</head>
+
+<body>
+<div id="page" class="site">
+	<div id="content" class="site-content">
+		<div id="primary" class="content-area">
+<!--			<main id="main" class="site-main" role="main">-->
+			<div class="entry-content">
+
+				<div class="information_l">
+					<img class="img_ror" src="resources/img_ror.png" alt=""><br />
+					<img class="img_ror1" src="resources/img_ror1.png" alt="">
+					<p class="img_ror2">
+						<b>Безопасность <br />
+							<span style="color: aliceblue">Маршрурты</span> <br/>
+							Эстетика</b>
+					</p>
+				</div>
+				<div class = "description">
+					<h3 style=" ">
+						Проект поиска лучшего пути по разным метрикам для электросамокатов и анализа его ETA.
+					</h3>
+					<p>
+						На данном сайте представлен прототип решения для Хакатона <a href="https://whoosh.bike/mobilityhack">Whoosh Mobility Hack</a> в котором
+						команда "Боком на КИКе" заняла 1 место. Мы(команда "Боком на КИКе") должны были решить проблему построения безопасных и эстетически
+						насыщенных маршрутов для электросамокатов.
+					</p>
+					<p>
+						Решение заключается в выявление разных типов маршрутов(Безопасный, Красивый, Быстрый, Исторический) и нахождение соотвествующих данных, что могут служить метриками для них.
+						Например, для безопасного маршрута использовалась карта высот с предпосылкой, что большой перепад высот может негативно сказаться на безопасности пути.
+					</p>
+					<p>
+						Состав команды: студенты ИТКН НИТУ «МИСиС» Владислав Тишин, Петер Ибрагимов, Арсений Иванов, Георгий Бондарь и выпускник университета Вадим Порватов.
+					</p>
+					<p>
+						Ниже вы можете протестировать сам алгоритм. Выберете 2 точки на карте и по ним построиться 7 маршрутов, слева от карты находится легенда.
+						Нажимая на кнопки можно подсветить интересующий вас маршрут. Прототип работает только в Москве в пределах МКАД.
+					</p>
+				</div>
+				<div class="segments">
+					<img class="legend" src="resources/legend.png" alt="">
+					<div class="objects">
+						<div id="map">
+
+						</div>
+						<div class="button_style">
+							<input id="1" type = "button"  onclick="input1()" value = "безопасный" class="floating-button" ><br />
+							<input id="2" type = "button"  onclick="input2()" value = "быстрый" class="floating-button" ><br />
+							<input id="3" type = "button"  onclick="input3()" value = "красивый" class="floating-button" ><br />
+							<input id="4" type = "button"  onclick="input4()" value = "исторический" class="floating-button" ><br />
+							<input id="5" type = "button"  onclick="input5()" value = "все маршруты" class="floating-button" >
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<button id="dark-mode-toggler" class="fixed-bottom" aria-pressed="false" onClick="toggleDarkMode()">
+				Dark Mode:
+				<span aria-hidden="true"></span>
+			</button>
+
+			<script src="js/darkmode.js"></script>
+		</div>
+	</div>
+</div>
+</body>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=8c38b83d-4105-430e-814c-3a3ccc7f08ee" type="text/javascript"></script>
+<script src="js/index.js"></script>
+</html>
